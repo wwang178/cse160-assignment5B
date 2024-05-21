@@ -43,7 +43,7 @@ function rotateCube(cube, startTime, duration, axis) {
 
 function main() {
     const canvas = document.querySelector('#c');
-    const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, canvas, alpha: true });
 
     // camera
     const fov = 45;
@@ -136,30 +136,30 @@ function main() {
     let skyboxGeometryWallHZ = new THREE.BoxGeometry(0.1, skyboxSize, skyboxSize);
     let skyboxTexture = loader.load("resources/images/sky.jpg");
     let skyboxMaterial = new THREE.MeshPhongMaterial({ map: skyboxTexture });
-    // sky
-    let skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
-    skybox.position.set(0, halfSkyboxSize, 0);
-    scene.add(skybox);
-    // floor
-    let skybox2 = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
-    skybox2.position.set(0, -halfSkyboxSize, 0);
-    scene.add(skybox2);
-    // wall back
-    let skybox3 = new THREE.Mesh(skyboxGeometryWallHX, skyboxMaterial);
-    skybox3.position.set(0, 0, -halfSkyboxSize);
-    scene.add(skybox3);
-    // wall front
-    let skybox4 = new THREE.Mesh(skyboxGeometryWallHX, skyboxMaterial);
-    skybox4.position.set(0, 0, halfSkyboxSize);
-    scene.add(skybox4);
-    // wall left
-    let skybox5 = new THREE.Mesh(skyboxGeometryWallHZ, skyboxMaterial);
-    skybox5.position.set(-halfSkyboxSize, 0, 0);
-    scene.add(skybox5);
-    // wall right
-    let skybox6 = new THREE.Mesh(skyboxGeometryWallHZ, skyboxMaterial);
-    skybox6.position.set(halfSkyboxSize, 0, 0);
-    scene.add(skybox6);
+    // // sky
+    // let skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
+    // skybox.position.set(0, halfSkyboxSize, 0);
+    // scene.add(skybox);
+    // // floor
+    // let skybox2 = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
+    // skybox2.position.set(0, -halfSkyboxSize, 0);
+    // scene.add(skybox2);
+    // // wall back
+    // let skybox3 = new THREE.Mesh(skyboxGeometryWallHX, skyboxMaterial);
+    // skybox3.position.set(0, 0, -halfSkyboxSize);
+    // scene.add(skybox3);
+    // // wall front
+    // let skybox4 = new THREE.Mesh(skyboxGeometryWallHX, skyboxMaterial);
+    // skybox4.position.set(0, 0, halfSkyboxSize);
+    // scene.add(skybox4);
+    // // wall left
+    // let skybox5 = new THREE.Mesh(skyboxGeometryWallHZ, skyboxMaterial);
+    // skybox5.position.set(-halfSkyboxSize, 0, 0);
+    // scene.add(skybox5);
+    // // wall right
+    // let skybox6 = new THREE.Mesh(skyboxGeometryWallHZ, skyboxMaterial);
+    // skybox6.position.set(halfSkyboxSize, 0, 0);
+    // scene.add(skybox6);
 
     // testCube
     let testCubeGeometry = new THREE.BoxGeometry(1, 1, 1);
